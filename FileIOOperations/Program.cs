@@ -10,11 +10,12 @@ namespace FileIOOperations
             Console.WriteLine("Welcome to File Operations!");
             Console.WriteLine("Enter 1-For File Operations");
             Console.WriteLine("Enter 2-For Stream Reader and Writer");
+            Console.WriteLine("Enter 3-Perform CSV read Write operations");
             int options = Convert.ToInt32(Console.ReadLine());
             switch(options)
             {
                 case 1:
-                    //Get choice on which Io operations to Perform
+                    //Get choice on which IO operations to Perform
                     Console.WriteLine("Enter 1-To check Whether File Exist!");
                     Console.WriteLine("Enter 2-To read all Lines of File");
                     Console.WriteLine("Enter 3-To read All Text in File");
@@ -42,6 +43,7 @@ namespace FileIOOperations
                     }
                     break;
                 case 2:
+                    //Get choice on which Stream operation to Perform
                     Console.WriteLine("Enter 1-Read a file Using Stream Reader");
                     Console.WriteLine("Enter 2-Write to file using Stream Writer");
                     int streamchoice = Convert.ToInt32(Console.ReadLine());
@@ -52,6 +54,20 @@ namespace FileIOOperations
                             break;
                         case 2:
                             StreamReaderAndWriter.WriteUsingStreamWriter();
+                            break;
+                    }
+                    break;
+                case 3:
+                    Console.WriteLine("Enter 1-Read a csv File and Print Values");
+                    Console.WriteLine("Enter 2-Write to a CSV File");
+                    int csvchoice = Convert.ToInt32(Console.ReadLine());
+                    switch (csvchoice)
+                    {
+                        case 1:
+                            CSVOperations.ImplementCSVOperation();
+                            break;
+                        case 2:
+                            CSVOperations.WriteCSVOperation();
                             break;
                     }
                     break;
