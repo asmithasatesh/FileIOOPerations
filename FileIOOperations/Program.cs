@@ -9,6 +9,7 @@ namespace FileIOOperations
             //Get option from User
             Console.WriteLine("Welcome to File Operations!");
             Console.WriteLine("Enter 1-For File Operations");
+            Console.WriteLine("Enter 2-For Stream Reader and Writer");
             int options = Convert.ToInt32(Console.ReadLine());
             switch(options)
             {
@@ -36,6 +37,21 @@ namespace FileIOOperations
                             break;
                         case 5:
                             FileOperations.DeleteFile();
+                            break;
+
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("Enter 1-Read a file Using Stream Reader");
+                    Console.WriteLine("Enter 2-Write to file using Stream Writer");
+                    int streamchoice = Convert.ToInt32(Console.ReadLine());
+                    switch (streamchoice)
+                    {
+                        case 1:
+                            StreamReaderAndWriter.ReadFromStreamReader();
+                            break;
+                        case 2:
+                            StreamReaderAndWriter.WriteUsingStreamWriter();
                             break;
                     }
                     break;
