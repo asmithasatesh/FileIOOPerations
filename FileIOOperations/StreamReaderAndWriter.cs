@@ -9,6 +9,7 @@ namespace FileIOOperations
     {
         public static String path = @"D:\Assignments\FileIOOperations\FileIOOperations\File.txt";
 
+        //Using StreamReader to read file into stream
         public static void ReadFromStreamReader()
         {
             using (StreamReader sr = File.OpenText(path))
@@ -21,6 +22,7 @@ namespace FileIOOperations
             }
         }
 
+        //Using StreamWriter to add content/line to file
         public static void WriteUsingStreamWriter()
         {
             using (StreamWriter sr = File.AppendText(path))
