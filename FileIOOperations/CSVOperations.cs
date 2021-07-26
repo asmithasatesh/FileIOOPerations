@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using CsvHelper;
+using Newtonsoft.Json;
 
 namespace FileIOOperations
 {
@@ -41,7 +42,7 @@ namespace FileIOOperations
             }
         }
         //Write Contents into CSV File
-        public static void WriteCSVOperation()
+        public static void WriteCSVOperation(int number)
         {
             string exportfile = @"D:\Assignments\FileIOOperations\FileIOOperations\CSVExportFile.csv";
             var users = new List<CSVOperations>{
@@ -59,6 +60,19 @@ namespace FileIOOperations
                 csv.WriteField(user.country);
                 csv.NextRecord();
             }
+
+            //Serialize and Deserialize Json
+            if(number==3)
+            {
+                //Serialise Json Object
+                JsonSerializer jsonSerializer = new JsonSerializer();
+                string serializejson = JsonConvert.SerializeObject(users);
+                Console.WriteLine(serializejson);
+                //Deserialize Json
+                List<CSVOperations> deserializejson = JsonConvert.DeserializeObject<List<CSVOperations>>(serializejson);
+                
+            }
+
 
         }
     }

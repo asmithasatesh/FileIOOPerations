@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace FileIOOperations
 {
     class Program
@@ -10,7 +11,7 @@ namespace FileIOOperations
             Console.WriteLine("Welcome to File Operations!");
             Console.WriteLine("Enter 1-For File Operations");
             Console.WriteLine("Enter 2-For Stream Reader and Writer");
-            Console.WriteLine("Enter 3-Perform CSV read Write operations");
+            Console.WriteLine("Enter 3-Perform CSV or Json read Write operations");
             int options = Convert.ToInt32(Console.ReadLine());
             switch(options)
             {
@@ -60,6 +61,7 @@ namespace FileIOOperations
                 case 3:
                     Console.WriteLine("Enter 1-Read a csv File and Print Values");
                     Console.WriteLine("Enter 2-Write to a CSV File");
+                    Console.WriteLine("Enter 3-Serialize and Deserialize Json");
                     int csvchoice = Convert.ToInt32(Console.ReadLine());
                     switch (csvchoice)
                     {
@@ -67,7 +69,13 @@ namespace FileIOOperations
                             CSVOperations.ImplementCSVOperation();
                             break;
                         case 2:
-                            CSVOperations.WriteCSVOperation();
+                            CSVOperations.WriteCSVOperation(2);
+                            break;
+                        case 3:
+                            CSVOperations.WriteCSVOperation(3);
+                            break;
+                        case 4:
+                            CSVOperations.WriteCSVOperation(4);
                             break;
                     }
                     break;
