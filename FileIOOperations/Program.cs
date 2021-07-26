@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace FileIOOperations
 {
     class Program
@@ -10,7 +11,9 @@ namespace FileIOOperations
             Console.WriteLine("Welcome to File Operations!");
             Console.WriteLine("Enter 1-For File Operations");
             Console.WriteLine("Enter 2-For Stream Reader and Writer");
-            Console.WriteLine("Enter 3-Perform CSV read Write operations");
+            Console.WriteLine("Enter 3-Perform CSV or Json read Write operations");
+            Console.WriteLine("Enter 4-Peform Binary Serialize and Deserialize");
+            Console.WriteLine("Enter 5-Peform XML Serialize and Deserialize");
             int options = Convert.ToInt32(Console.ReadLine());
             switch(options)
             {
@@ -60,6 +63,9 @@ namespace FileIOOperations
                 case 3:
                     Console.WriteLine("Enter 1-Read a csv File and Print Values");
                     Console.WriteLine("Enter 2-Write to a CSV File");
+                    Console.WriteLine("Enter 3-Serialize and Deserialize Json");
+                    Console.WriteLine("Enter 4-Convert from Csv to Json");
+                    Console.WriteLine("Enter 5-Convert from Json to Csv");
                     int csvchoice = Convert.ToInt32(Console.ReadLine());
                     switch (csvchoice)
                     {
@@ -67,10 +73,49 @@ namespace FileIOOperations
                             CSVOperations.ImplementCSVOperation();
                             break;
                         case 2:
-                            CSVOperations.WriteCSVOperation();
+                            CSVOperations.WriteCSVOperation(2);
+                            break;
+                        case 3:
+                            CSVOperations.WriteCSVOperation(3);
+                            break;
+                        case 4:
+                            CSVOperations.CsvToJson();
+                            break;
+                        case 5:
+                            CSVOperations.JsonToCsv();
+                            break;
+
+                    }
+                    break;
+                case 4:
+                    Console.WriteLine("Enter 1-Binary Serialization");
+                    Console.WriteLine("Enter 2-Binary DeSerialization");
+                    int binarychoice = Convert.ToInt32(Console.ReadLine());
+                    switch (binarychoice)
+                    {
+                        case 1:
+                            BinaryOperations.BinarySerialization();
+                            break;
+                        case 2:
+                            BinaryOperations.BinaryDeSerialization();
                             break;
                     }
                     break;
+                case 5:
+                    Console.WriteLine("Enter 1-XML Serialization");
+                    Console.WriteLine("Enter 2-XMLDeSerialization");
+                    int xmlchoice = Convert.ToInt32(Console.ReadLine());
+                    switch (xmlchoice)
+                    {
+                        case 1:
+                            XMLOperations.SerializeXML();
+                            break;
+                        case 2:
+                            XMLOperations.DeSerializeXML();
+                            break;
+                    }
+                    break;
+
                 default:
                     break;
             }
