@@ -13,6 +13,7 @@ namespace FileIOOperations
             Console.WriteLine("Enter 2-For Stream Reader and Writer");
             Console.WriteLine("Enter 3-Perform CSV or Json read Write operations");
             Console.WriteLine("Enter 4-Peform Binary Serialize and Deserialize");
+            Console.WriteLine("Enter 5-Peform XML Serialize and Deserialize");
             int options = Convert.ToInt32(Console.ReadLine());
             switch(options)
             {
@@ -97,6 +98,20 @@ namespace FileIOOperations
                             break;
                         case 2:
                             BinaryOperations.BinaryDeSerialization();
+                            break;
+                    }
+                    break;
+                case 5:
+                    Console.WriteLine("Enter 1-XML Serialization");
+                    Console.WriteLine("Enter 2-XMLDeSerialization");
+                    int xmlchoice = Convert.ToInt32(Console.ReadLine());
+                    switch (xmlchoice)
+                    {
+                        case 1:
+                            XMLOperations.SerializeXML();
+                            break;
+                        case 2:
+                            XMLOperations.DeSerializeXML();
                             break;
                     }
                     break;
