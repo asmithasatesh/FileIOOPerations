@@ -62,6 +62,8 @@ namespace FileIOOperations
                     Console.WriteLine("Enter 1-Read a csv File and Print Values");
                     Console.WriteLine("Enter 2-Write to a CSV File");
                     Console.WriteLine("Enter 3-Serialize and Deserialize Json");
+                    Console.WriteLine("Enter 4-Convert from Csv to Json");
+                    Console.WriteLine("Enter 5-Convert from Json to Csv");
                     int csvchoice = Convert.ToInt32(Console.ReadLine());
                     switch (csvchoice)
                     {
@@ -75,8 +77,12 @@ namespace FileIOOperations
                             CSVOperations.WriteCSVOperation(3);
                             break;
                         case 4:
-                            CSVOperations.WriteCSVOperation(4);
+                            CSVOperations.CsvToJson();
                             break;
+                        case 5:
+                            CSVOperations.JsonToCsv();
+                            break;
+
                     }
                     break;
                 default:
